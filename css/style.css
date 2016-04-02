@@ -16,7 +16,7 @@ html{
   text-rendering: optimizeLegibility;
   height: 100vh;
   margin: 0 auto; /*all our rows will be centered*/
-  background-image: linear-gradient(27deg, #151515 5px, transparent 5px),url('http://indieruckus.com/wp-content/uploads/2015/07/feist2.png');
+  background-image: linear-gradient(27deg, #151515 5px, transparent 5px),url('http://www.aestheticmovement.com/wp-content/themes/am/images/chalkboard.1440x900.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -25,10 +25,11 @@ html{
 }
 
 .container {
-  
+  position: relative;
 }
 
 .gameboard{
+
   display: flex;
   align-items     : center;
   justify-content : center;
@@ -37,7 +38,10 @@ html{
   align-content   : center;
   width   : 400px;
   height  : 400px;
-  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .column{
@@ -49,12 +53,16 @@ html{
     display : block;
     width   : 125px;
     height  : 125px;
-    border  : 3px solid blue;
-    
+    border  : 2px solid blue;
+    transition: opacity .40s ease-in-out;
     color       : #e4e4e4;
     font-size   : 5em;
     font-weight : 100;
     text-align  : center;
-    padding     : 20px;
+    padding     : 4px;
+  }
+
+  .square:hover {
+    opacity: 0.2;
   }
 
