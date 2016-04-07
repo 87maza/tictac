@@ -1,5 +1,5 @@
 var p1icon = "X"
-var nextTurn = p2icon;
+var nextTurn = p1icon;
 var p2icon = "O";
 var square = document.getElementsByClassName('square');
 for( var i = 0; i<square.length; i++){
@@ -8,7 +8,7 @@ for( var i = 0; i<square.length; i++){
 }
 function addIcon(){
   if(this.hasChildNodes()) {
-    console.log('sorry, occupied');
+    // console.log('sorry, occupied');
     return;
   }
   else{
@@ -25,9 +25,11 @@ function addIcon(){
  function changeTurn(){
       if(nextTurn === p1icon){
           nextTurn = p2icon;
+          computerAI();
           checkWinner();
       } else {
            nextTurn = p1icon;
+           computerAI();
            checkWinner();
       }
   }
@@ -59,20 +61,37 @@ function checkWinner() {
       alert("O Wins! The score is now:\n " + "Player 2 (X): " + p2ScoreAdd + "\n Player 1 (X): " + p1ScoreAdd);
       clearBoard();
     };
-    if(checker === 2 && nextTurn === p2icon) {
-      console.log('inside 2checker')
-      for(var l = 0; l<3; l++){
-        //ADD BLOCKER AI FOR 2 IN A ROWS
-        console.log(winningCombos[j][l]);
-      }
-    }
+    // if(checker === 2 && nextTurn === p2icon) {
+    //   var x = winningCombos[j].map(function(item){
+
+    //   })
+    // }
   }
 }
 
 function computerAI() {
-  if(square[4].innerHTML===""){
+  var random = (Math.floor(Math.random() * 9) + 1)-1;
+  if(square[4].innerHTML==="" && nextTurn === p2icon){
     square[4].innerHTML = p2icon;
-    changeTurn();
+    square[4].squareVal= -1;
+    nextTurn = p1icon;
+    return;
+  }
+  if(square[random].innerHTML==="" && nextTurn === p2icon){
+    console.log('if random' + random);
+    square[random].innerHTML = p2icon;
+    square[random].squareVal= -1;
+    nextTurn = p1icon;
+    return;
+  }
+  
+  if(square[random].innerHTML!=="" && nextTurn === p2icon){
+    random = (Math.floor(Math.random() * 9) + 1)-1;
+    console.log('elseif random'+ random);
+    square[random].innerHTML = p2icon;
+    square[random].squareVal= -1;
+    nextTurn = p1icon;
+    return;
   }
 
 }
