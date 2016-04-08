@@ -15,42 +15,51 @@
     <body>
     <h1>Ticky <span>Tacky</span></h1>
     <div id="container">
-    <div class="gameboard">
+      <div class="btn-icon">
+          <button class="btns"id="exes" onclick="selectX()">X</button>
+          <button class="btns"id='ohs' onclick="selectO()">O</button>
+      </div>
+      <div class="gameboard">
+          <div class="column">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div><!-- end of column -->
 
-        <div class="column">
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-        </div><!-- end of column -->
+          <div class="column">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div><!-- end of column -->
 
-        <div class="column">
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-        </div><!-- end of column -->
-
-        <div class="column">
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-        </div><!-- end of column -->
+          <div class="column">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div><!-- end of column -->
       </div><!-- end of gameboard -->
       <div class="instructions"> 
         <h2>Rules:</h2>
-        <p>The objective of Tic Tac Toe is to get three in a row. <ul>
-        <li>Player 1 choses and icon and Player 2/Computer choses one.</li>
-        <li>Players take turns placing their icons on the game board until either opponent has three in a row or all nine squares are filled.</li>
-        <li>Computer/Player 2 always goes first, and in the event that no one has three in a row, the stalemate is called a cat's game.</li></ul></p>
+        <p>The goal of Ticky Tacky is to get three in a row. 
+          <ul>
+            <li>
+              - Player 1 choses and icon and Player 2/Computer choses one.
+            </li>
+            <li>
+              - Players take turns placing their icons on the game board.
+            </li>
+            <li>
+              - Player 1 always goes first, and in the event that no one has three in a row, the stalemate is called a cat's game.
+            </li>
+          </ul>
+        </p>
       </div>
-
       <div class="scoreboard">
         <h2>Scoreboard:</h2>
-        <p>player1 score: <span id="p1score">0</span></p>
-        <p>player2 score: <span id="p2score">0</span></p>
+        <p>Player 1 score: <span id="p1score">0</span></p>
+        <p>Player 2 score: <span id="p2score">0</span></p>
       </div><!-- end of scoreboard -->
     </div><!-- end of container -->
-
-
         <script src="js/script.js"></script>
     <footer>
     </footer>
