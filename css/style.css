@@ -37,17 +37,14 @@ h1 {
   font-size: 600%;
   color: RGBa(255,255,153,.6);
   text-align: center;
-  margin: .60em 0 0 0;
+  margin: .20em 0 0 0;
 }
 h1 span{
   color: rgba(243,242,242,.6);
 }
-.btn-icon{
-  text-align: center;
-}
+
 
 .gameboard{
-
   display: flex;
   align-items     : center;
   justify-content : center;
@@ -61,9 +58,6 @@ h1 span{
   left: 52%;
   transform: translate(-50%, -50%);
 }
-
-
-
 .column{
   display         : flex;
   flex-direction  : column;
@@ -81,18 +75,42 @@ h1 span{
     font-weight : 100;
     text-align  : center;
     padding     : 4px;
-/*     border-width: 0 */
   }
 
   .square:hover {
     background: grey;
     opacity: 0.2;
-/*     border-width: 35px; */
     border-radius: .5em;
   }
 
 .square:active {
   background: black;
+}
+
+/*===========================================
+X-O ICON BUTTONS
+=============================================*/
+.btn-icon{
+  width:100%;
+}
+button{
+  text-align: center;
+  border-bottom: 10px solid #34495e;
+  transition-property: border-bottom .6s linear 0s;
+  background: rgba(23,114,69, .6);
+  font-size: 150%;
+  text-align: center;
+  margin: 0 auto;
+  /*width: 5%;*/
+  height: 2em;
+  display: inline-block;
+  color: white;
+      vertical-align: middle;
+    display: block;
+    width: 5%;
+    margin: 0 auto;
+
+
 }
 
 /*===========================================
@@ -107,7 +125,7 @@ Instructions
   color: rgba(14,239,158, .6);
   float: left;
   position: absolute;
-  width: 30%;
+  width: 34%;
   height: 60%; 
 }
 .instructions h2{
@@ -120,10 +138,19 @@ Instructions
    text-align: justify;
    text-justify: inter-word;
 }
-li{
-  list-style-type: none;
-  line-height: 1.5;
+.instructions ul {
+    list-style: outside disc;
+    margin-left: 1em;
+    padding-top: 1em;
 }
+.instructions li {
+    position: relative;
+    left: 1em;
+    padding-right: 1em;  
+    line-height: 1.5; 
+    padding-right: 3.5em; 
+}
+
 
 /*===========================================
 Scoreboard
@@ -133,12 +160,16 @@ Scoreboard
   color: rgba(255,235,127, .6);
   font-family: 'Poiret One', cursive;
   font-size: 170%;
+  margin-right: 10%;
+  line-height: 1.5;
 }
-.scoreboard p{
-  font-style: bold;
+.scoreboard h2 {
+  border-bottom: solid 2px rgba(255, 102, 0, .6);
+  display: inline;
+  padding-bottom: 3px;
+
 }
 .scoreboard span {
   font-family: Palatino, 'Palatino Linotype', serif;
   color: rgba(255, 102, 0, .6);
-  font-weight: 500;
 }
